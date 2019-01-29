@@ -57,6 +57,12 @@ def load_command_table(self, _):
         g.command('remove', 'remove_extension_repo')
         g.command('list', 'list_extension_repos')
 
+    with CommandGroup(self, 'github', operation_group('github')) as g:
+        g.command('analyze', 'analyze_issues')
+        g.command('labels', 'dump_labels')
+        g.command('issues', 'dump_issues')
+        g.command('assign', 'assign_issues')
+
     # TODO: implement
     # with CommandGroup(self, operation_group('help')) as g:
     #     g.command('generate', 'generate_help_xml')
