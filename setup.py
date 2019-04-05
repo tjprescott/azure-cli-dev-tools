@@ -56,7 +56,7 @@ setup(
         'gitpython',
         'knack~=0.5.4',
         'mock',
-        'pytest~=3.6.0',
+        'pytest>=3.6.0',
         'pyGithub',
         'pytest-xdist',
         'pyyaml',

@@ -27,21 +27,21 @@ def _get_cli_repo():
 
 def dump_labels():
     repo = _get_cli_repo()
-    label_dict = {}
+    labels = []
     for label in repo.get_labels():
-        name = label.name
-        label_dict[name] = {
-            'count': 0,
+        new_label = {
+            'name': label.name,
             'color': label.color,
-            'description': label.description,
+            'description': label.description or '',
             'category': 'OTHER',
             'owners': {}
         }
         if label.color == SERVICE_COLOR:
-            label_dict[name]['category'] = 'SERVICE'
+            new_label['category'] = 'SERVICE'
         elif label.color == CLI_COLOR:
-            label_dict[name]['category'] = 'CLI'
-    return label_dict
+            new_label['category'] = 'CLI'
+        labels.append(new_label)
+    return labels
 
 
 def dump_issues():
