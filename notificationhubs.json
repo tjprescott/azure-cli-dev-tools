@@ -1,0 +1,2108 @@
+{
+  "models": {
+    "enums": {
+      "AccessRights": {
+        "name": "AccessRights",
+        "type": "Enum",
+        "values": [
+          "manage",
+          "send",
+          "listen"
+        ]
+      },
+      "NamespaceType": {
+        "name": "NamespaceType",
+        "type": "Enum",
+        "values": [
+          "messaging",
+          "notification_hub"
+        ]
+      },
+      "SkuName": {
+        "name": "SkuName",
+        "type": "Enum",
+        "values": [
+          "free",
+          "basic",
+          "standard"
+        ]
+      }
+    },
+    "exceptions": {
+      "ErrorResponseException": {
+        "name": "ErrorResponseException",
+        "type": "Exception"
+      }
+    },
+    "models": {
+      "AdmCredential": {
+        "name": "AdmCredential",
+        "type": "Model",
+        "parameters": {
+          "client_id": {
+            "name": "client_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "client_secret": {
+            "name": "client_secret",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "auth_token_url": {
+            "name": "auth_token_url",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "ApnsCredential": {
+        "name": "ApnsCredential",
+        "type": "Model",
+        "parameters": {
+          "apns_certificate": {
+            "name": "apns_certificate",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "certificate_key": {
+            "name": "certificate_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "endpoint": {
+            "name": "endpoint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "thumbprint": {
+            "name": "thumbprint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "key_id": {
+            "name": "key_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "app_name": {
+            "name": "app_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "app_id": {
+            "name": "app_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "token": {
+            "name": "token",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "BaiduCredential": {
+        "name": "BaiduCredential",
+        "type": "Model",
+        "parameters": {
+          "baidu_api_key": {
+            "name": "baidu_api_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "baidu_end_point": {
+            "name": "baidu_end_point",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "baidu_secret_key": {
+            "name": "baidu_secret_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "CheckAvailabilityParameters": {
+        "name": "CheckAvailabilityParameters",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": true,
+              "readonly": false
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": true,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "is_availiable": {
+            "name": "is_availiable",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "CheckAvailabilityResult": {
+        "name": "CheckAvailabilityResult",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "is_availiable": {
+            "name": "is_availiable",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "name": "ErrorResponse",
+        "type": "Model",
+        "parameters": {
+          "code": {
+            "name": "code",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "message": {
+            "name": "message",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "GcmCredential": {
+        "name": "GcmCredential",
+        "type": "Model",
+        "parameters": {
+          "gcm_endpoint": {
+            "name": "gcm_endpoint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "google_api_key": {
+            "name": "google_api_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "MpnsCredential": {
+        "name": "MpnsCredential",
+        "type": "Model",
+        "parameters": {
+          "mpns_certificate": {
+            "name": "mpns_certificate",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "certificate_key": {
+            "name": "certificate_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "thumbprint": {
+            "name": "thumbprint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NamespaceCreateOrUpdateParameters": {
+        "name": "NamespaceCreateOrUpdateParameters",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "namespace_create_or_update_parameters_name": {
+            "name": "namespace_create_or_update_parameters_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "provisioning_state": {
+            "name": "provisioning_state",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "region": {
+            "name": "region",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "metric_id": {
+            "name": "metric_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "status": {
+            "name": "status",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "created_at": {
+            "name": "created_at",
+            "properties": {
+              "type": "iso-8601",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "properties": {
+              "type": "iso-8601",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "service_bus_endpoint": {
+            "name": "service_bus_endpoint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "subscription_id": {
+            "name": "subscription_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "scale_unit": {
+            "name": "scale_unit",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "enabled": {
+            "name": "enabled",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "critical": {
+            "name": "critical",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "data_center": {
+            "name": "data_center",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "namespace_type": {
+            "name": "namespace_type",
+            "properties": {
+              "type": "NamespaceType",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NamespacePatchParameters": {
+        "name": "NamespacePatchParameters",
+        "type": "Model",
+        "parameters": {
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NamespaceResource": {
+        "name": "NamespaceResource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "namespace_resource_name": {
+            "name": "namespace_resource_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "provisioning_state": {
+            "name": "provisioning_state",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "region": {
+            "name": "region",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "metric_id": {
+            "name": "metric_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "status": {
+            "name": "status",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "created_at": {
+            "name": "created_at",
+            "properties": {
+              "type": "iso-8601",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "updated_at": {
+            "name": "updated_at",
+            "properties": {
+              "type": "iso-8601",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "service_bus_endpoint": {
+            "name": "service_bus_endpoint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "subscription_id": {
+            "name": "subscription_id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "scale_unit": {
+            "name": "scale_unit",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "enabled": {
+            "name": "enabled",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "critical": {
+            "name": "critical",
+            "properties": {
+              "type": "bool",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "data_center": {
+            "name": "data_center",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "namespace_type": {
+            "name": "namespace_type",
+            "properties": {
+              "type": "NamespaceType",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NamespaceResourcePaged": {
+        "name": "NamespaceResourcePaged",
+        "type": "Model",
+        "parameters": {
+          "next_link": {
+            "name": "next_link",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "current_page": {
+            "name": "current_page",
+            "properties": {
+              "type": "[NamespaceResource]",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NotificationHubCreateOrUpdateParameters": {
+        "name": "NotificationHubCreateOrUpdateParameters",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "notification_hub_create_or_update_parameters_name": {
+            "name": "notification_hub_create_or_update_parameters_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "registration_ttl": {
+            "name": "registration_ttl",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "authorization_rules": {
+            "name": "authorization_rules",
+            "properties": {
+              "type": "[SharedAccessAuthorizationRuleProperties]",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "apns_credential": {
+            "name": "apns_credential",
+            "properties": {
+              "type": "ApnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "wns_credential": {
+            "name": "wns_credential",
+            "properties": {
+              "type": "WnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "gcm_credential": {
+            "name": "gcm_credential",
+            "properties": {
+              "type": "GcmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "mpns_credential": {
+            "name": "mpns_credential",
+            "properties": {
+              "type": "MpnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "adm_credential": {
+            "name": "adm_credential",
+            "properties": {
+              "type": "AdmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "baidu_credential": {
+            "name": "baidu_credential",
+            "properties": {
+              "type": "BaiduCredential",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NotificationHubResource": {
+        "name": "NotificationHubResource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "notification_hub_resource_name": {
+            "name": "notification_hub_resource_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "registration_ttl": {
+            "name": "registration_ttl",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "authorization_rules": {
+            "name": "authorization_rules",
+            "properties": {
+              "type": "[SharedAccessAuthorizationRuleProperties]",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "apns_credential": {
+            "name": "apns_credential",
+            "properties": {
+              "type": "ApnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "wns_credential": {
+            "name": "wns_credential",
+            "properties": {
+              "type": "WnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "gcm_credential": {
+            "name": "gcm_credential",
+            "properties": {
+              "type": "GcmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "mpns_credential": {
+            "name": "mpns_credential",
+            "properties": {
+              "type": "MpnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "adm_credential": {
+            "name": "adm_credential",
+            "properties": {
+              "type": "AdmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "baidu_credential": {
+            "name": "baidu_credential",
+            "properties": {
+              "type": "BaiduCredential",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "NotificationHubResourcePaged": {
+        "name": "NotificationHubResourcePaged",
+        "type": "Model",
+        "parameters": {
+          "next_link": {
+            "name": "next_link",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "current_page": {
+            "name": "current_page",
+            "properties": {
+              "type": "[NotificationHubResource]",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "Operation": {
+        "name": "Operation",
+        "type": "Model",
+        "parameters": {
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "display": {
+            "name": "display",
+            "properties": {
+              "type": "OperationDisplay",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "OperationDisplay": {
+        "name": "OperationDisplay",
+        "type": "Model",
+        "parameters": {
+          "provider": {
+            "name": "provider",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "resource": {
+            "name": "resource",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "operation": {
+            "name": "operation",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          }
+        }
+      },
+      "OperationPaged": {
+        "name": "OperationPaged",
+        "type": "Model",
+        "parameters": {
+          "next_link": {
+            "name": "next_link",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "current_page": {
+            "name": "current_page",
+            "properties": {
+              "type": "[Operation]",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "PnsCredentialsResource": {
+        "name": "PnsCredentialsResource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "apns_credential": {
+            "name": "apns_credential",
+            "properties": {
+              "type": "ApnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "wns_credential": {
+            "name": "wns_credential",
+            "properties": {
+              "type": "WnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "gcm_credential": {
+            "name": "gcm_credential",
+            "properties": {
+              "type": "GcmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "mpns_credential": {
+            "name": "mpns_credential",
+            "properties": {
+              "type": "MpnsCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "adm_credential": {
+            "name": "adm_credential",
+            "properties": {
+              "type": "AdmCredential",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "baidu_credential": {
+            "name": "baidu_credential",
+            "properties": {
+              "type": "BaiduCredential",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "PolicykeyResource": {
+        "name": "PolicykeyResource",
+        "type": "Model",
+        "parameters": {
+          "policy_key": {
+            "name": "policy_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "Resource": {
+        "name": "Resource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "ResourceListKeys": {
+        "name": "ResourceListKeys",
+        "type": "Model",
+        "parameters": {
+          "primary_connection_string": {
+            "name": "primary_connection_string",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "secondary_connection_string": {
+            "name": "secondary_connection_string",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "primary_key": {
+            "name": "primary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "secondary_key": {
+            "name": "secondary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "key_name": {
+            "name": "key_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "SharedAccessAuthorizationRuleCreateOrUpdateParameters": {
+        "name": "SharedAccessAuthorizationRuleCreateOrUpdateParameters",
+        "type": "Model",
+        "parameters": {
+          "properties": {
+            "name": "properties",
+            "properties": {
+              "type": "SharedAccessAuthorizationRuleProperties",
+              "required": true,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "SharedAccessAuthorizationRuleListResult": {
+        "name": "SharedAccessAuthorizationRuleListResult",
+        "type": "Model",
+        "parameters": {
+          "value": {
+            "name": "value",
+            "properties": {
+              "type": "[SharedAccessAuthorizationRuleResource]",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "next_link": {
+            "name": "next_link",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "SharedAccessAuthorizationRuleProperties": {
+        "name": "SharedAccessAuthorizationRuleProperties",
+        "type": "Model",
+        "parameters": {
+          "rights": {
+            "name": "rights",
+            "properties": {
+              "type": "[AccessRights]",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "primary_key": {
+            "name": "primary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "secondary_key": {
+            "name": "secondary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "key_name": {
+            "name": "key_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "claim_type": {
+            "name": "claim_type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "claim_value": {
+            "name": "claim_value",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "modified_time": {
+            "name": "modified_time",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "created_time": {
+            "name": "created_time",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "revision": {
+            "name": "revision",
+            "properties": {
+              "type": "int",
+              "required": false,
+              "readonly": true
+            }
+          }
+        }
+      },
+      "SharedAccessAuthorizationRuleResource": {
+        "name": "SharedAccessAuthorizationRuleResource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "type": {
+            "name": "type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "location": {
+            "name": "location",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "tags": {
+            "name": "tags",
+            "properties": {
+              "type": "{str}",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "sku": {
+            "name": "sku",
+            "properties": {
+              "type": "Sku",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "rights": {
+            "name": "rights",
+            "properties": {
+              "type": "[AccessRights]",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "primary_key": {
+            "name": "primary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "secondary_key": {
+            "name": "secondary_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "key_name": {
+            "name": "key_name",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "claim_type": {
+            "name": "claim_type",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "claim_value": {
+            "name": "claim_value",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "modified_time": {
+            "name": "modified_time",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "created_time": {
+            "name": "created_time",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": true
+            }
+          },
+          "revision": {
+            "name": "revision",
+            "properties": {
+              "type": "int",
+              "required": false,
+              "readonly": true
+            }
+          }
+        }
+      },
+      "SharedAccessAuthorizationRuleResourcePaged": {
+        "name": "SharedAccessAuthorizationRuleResourcePaged",
+        "type": "Model",
+        "parameters": {
+          "next_link": {
+            "name": "next_link",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "current_page": {
+            "name": "current_page",
+            "properties": {
+              "type": "[SharedAccessAuthorizationRuleResource]",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "Sku": {
+        "name": "Sku",
+        "type": "Model",
+        "parameters": {
+          "name": {
+            "name": "name",
+            "properties": {
+              "type": "str",
+              "required": true,
+              "readonly": false
+            }
+          },
+          "tier": {
+            "name": "tier",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "size": {
+            "name": "size",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "family": {
+            "name": "family",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "capacity": {
+            "name": "capacity",
+            "properties": {
+              "type": "int",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "SubResource": {
+        "name": "SubResource",
+        "type": "Model",
+        "parameters": {
+          "id": {
+            "name": "id",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      },
+      "WnsCredential": {
+        "name": "WnsCredential",
+        "type": "Model",
+        "parameters": {
+          "package_sid": {
+            "name": "package_sid",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "secret_key": {
+            "name": "secret_key",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          },
+          "windows_live_endpoint": {
+            "name": "windows_live_endpoint",
+            "properties": {
+              "type": "str",
+              "required": false,
+              "readonly": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "operations": {
+    "NamespacesOperations": {
+      "name": "NamespacesOperations",
+      "functions": {
+        "check_availability": {
+          "name": "check_availability",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/providers/Microsoft.NotificationHubs/checkNamespaceAvailability"
+          },
+          "parameters": [
+            {
+              "name": "parameters"
+            }
+          ]
+        },
+        "create_or_update": {
+          "name": "create_or_update",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "parameters"
+            }
+          ]
+        },
+        "create_or_update_authorization_rule": {
+          "name": "create_or_update_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            },
+            {
+              "name": "properties"
+            }
+          ]
+        },
+        "delete": {
+          "name": "delete",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            }
+          ]
+        },
+        "delete_authorization_rule": {
+          "name": "delete_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "get": {
+          "name": "get",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            }
+          ]
+        },
+        "get_authorization_rule": {
+          "name": "get_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "list": {
+          "name": "list",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            }
+          ]
+        },
+        "list_all": {
+          "name": "list_all",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/providers/Microsoft.NotificationHubs/namespaces"
+          },
+          "parameters": []
+        },
+        "list_authorization_rules": {
+          "name": "list_authorization_rules",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            }
+          ]
+        },
+        "list_keys": {
+          "name": "list_keys",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/listKeys"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "patch": {
+          "name": "patch",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "tags"
+            },
+            {
+              "name": "sku"
+            }
+          ]
+        },
+        "regenerate_keys": {
+          "name": "regenerate_keys",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/regenerateKeys"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            },
+            {
+              "name": "policy_key"
+            }
+          ]
+        }
+      }
+    },
+    "NotificationHubsOperations": {
+      "name": "NotificationHubsOperations",
+      "functions": {
+        "check_notification_hub_availability": {
+          "name": "check_notification_hub_availability",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/checkNotificationHubAvailability"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "parameters"
+            }
+          ]
+        },
+        "create_or_update": {
+          "name": "create_or_update",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "parameters"
+            }
+          ]
+        },
+        "create_or_update_authorization_rule": {
+          "name": "create_or_update_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            },
+            {
+              "name": "properties"
+            }
+          ]
+        },
+        "delete": {
+          "name": "delete",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            }
+          ]
+        },
+        "delete_authorization_rule": {
+          "name": "delete_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "get": {
+          "name": "get",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            }
+          ]
+        },
+        "get_authorization_rule": {
+          "name": "get_authorization_rule",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "get_pns_credentials": {
+          "name": "get_pns_credentials",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/pnsCredentials"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            }
+          ]
+        },
+        "list": {
+          "name": "list",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            }
+          ]
+        },
+        "list_authorization_rules": {
+          "name": "list_authorization_rules",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            }
+          ]
+        },
+        "list_keys": {
+          "name": "list_keys",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}/listKeys"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            }
+          ]
+        },
+        "regenerate_keys": {
+          "name": "regenerate_keys",
+          "metadata": {
+            "url": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}/regenerateKeys"
+          },
+          "parameters": [
+            {
+              "name": "resource_group_name"
+            },
+            {
+              "name": "namespace_name"
+            },
+            {
+              "name": "notification_hub_name"
+            },
+            {
+              "name": "authorization_rule_name"
+            },
+            {
+              "name": "policy_key"
+            }
+          ]
+        }
+      }
+    },
+    "Operations": {
+      "name": "Operations",
+      "functions": {
+        "list": {
+          "name": "list",
+          "metadata": {
+            "url": "/providers/Microsoft.NotificationHubs/operations"
+          },
+          "parameters": []
+        }
+      }
+    }
+  }
+}
