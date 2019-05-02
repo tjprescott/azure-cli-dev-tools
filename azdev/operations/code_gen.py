@@ -6,6 +6,7 @@
 
 from __future__ import print_function
 
+import json
 import os
 import re
 from subprocess import CalledProcessError
@@ -15,7 +16,8 @@ from knack.prompting import prompt_y_n
 from knack.util import CLIError
 
 from azdev.utilities import (
-    pip_cmd, display, heading, COMMAND_MODULE_PREFIX, EXTENSION_PREFIX, get_cli_repo_path, get_ext_repo_paths)
+    pip_cmd, display, heading, subheading, COMMAND_MODULE_PREFIX, EXTENSION_PREFIX,
+    get_cli_repo_path, get_ext_repo_paths)
 
 
 def _ensure_dir(path):
@@ -181,3 +183,34 @@ def _create_package(prefix, repo_path, is_ext, name='test', display_name=None, r
     # TODO: add module to Github code owners file
 
     display('\nCreation of {prefix}{mod} successful! Run `az {mod} -h` to get started!'.format(prefix=prefix, mod=name))
+
+
+def show_command_tree(cmd, file):
+
+    json_data = None
+    try:
+        with open(file, 'r') as f:
+            json_data = json.loads(f.read())
+    except (OSError, IOError):
+        pass
+
+    if not json_data:
+        raise CLIError('unable to load JSON file: {}'.format(file))
+
+    models = json_data['models']
+    operations = json_data['operations']
+
+    subheading('Operations')
+
+    param_set_dict = {}
+
+    for client, data in operations.items():
+        for func_data in data['functions'].values():
+            func_name = func_data['name']
+            func_url = func_data['metadata']['url']
+            func_params = ':'.join(x['name'] for x in func_data['parameters'])
+            if func_params not in param_set_dict:
+                param_set_dict[func_params] = []
+            param_set_dict[func_params].append('{}_{}'.format(client, func_name))
+        from pprint import pprint
+        pprint(param_set_dict)
