@@ -185,6 +185,15 @@ def _create_package(prefix, repo_path, is_ext, name='test', display_name=None, r
     display('\nCreation of {prefix}{mod} successful! Run `az {mod} -h` to get started!'.format(prefix=prefix, mod=name))
 
 
+def _make_snake_case(s):
+    snake_regex_1 = re.compile('(.)([A-Z][a-z]+)')
+    snake_regex_2 = re.compile('([a-z0-9])([A-Z])')
+    if isinstance(s, str):
+        s1 = re.sub(snake_regex_1, r'\1_\2', s)
+        return re.sub(snake_regex_2, r'\1_\2', s1).lower()
+    return s
+
+
 def show_command_tree(cmd, file):
 
     json_data = None
@@ -202,15 +211,66 @@ def show_command_tree(cmd, file):
 
     subheading('Operations')
 
-    param_set_dict = {}
+    prefix_dict = {
+        'create': ['create', 'create_or_update'],
+        'update': ['update', 'patch'],
+        'list': ['list', 'list_by', 'list_all'],
+        'delete': ['delete'],
+        'show': ['get'],
+        'other': ['check', 'regenerate']
+    }
+
+    # build up reverse prefix dictionary
+    reverse_prefix_dict = {}
+    for key, values in prefix_dict.items():
+        for val in values:
+            reverse_prefix_dict[val] = key
+    sorted_prefixes = sorted(reverse_prefix_dict.keys(), key=len, reverse=True)
+
+    command_tree = {
+        'name': 'ROOT',
+        'subgroups': [],
+        'commands': []
+    }
+
+    client_objects = []
 
     for client, data in operations.items():
+        snake_client = _make_snake_case(client)
+        client_comps = snake_client.split('_')
+        try:
+            client_comps.remove('operations')
+        except ValueError:
+            pass
+        client_object = '_'.join(client_comps) or 'operations'
+        client_objects.append(client_object)
+
+        sub_group_node = {
+            'name': client_object,
+            'subgroups': [],
+            'commands': []
+        }
         for func_data in data['functions'].values():
             func_name = func_data['name']
-            func_url = func_data['metadata']['url']
-            func_params = ':'.join(x['name'] for x in func_data['parameters'])
-            if func_params not in param_set_dict:
-                param_set_dict[func_params] = []
-            param_set_dict[func_params].append('{}_{}'.format(client, func_name))
-        from pprint import pprint
-        pprint(param_set_dict)
+            print(func_name)
+        #     for prefix in sorted_prefixes:
+        #         if func_name.startswith(prefix):
+        #             command_name = None
+        #             command_type = reverse_prefix_dict[prefix]
+        #             if command_type == 'other':
+        #                 command_name = func_name
+        #             else:
+        #                 remainder = func_name[len(prefix):]
+        #                 if remainder.startswith('_'):
+        #                     remainder = remainder[1:]
+        #                 command_name = command_type
+        #                 if remainder:
+        #                     # TODO: subgroups
+        #                     print("OMG WHAT IS {}".format(remainder))
+        #                     continue
+        #             sub_group_node['commands'].append({
+        #                 'name': command_name
+        #             })
+        #             break
+        # command_tree['subgroups'].append(sub_group_node)
+    print(client_objects)
